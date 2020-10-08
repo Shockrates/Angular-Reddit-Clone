@@ -12,10 +12,16 @@ import { SignupRequestPayload } from './sign-up-request.payload';
 
 export class SignUpComponent implements OnInit {
 
-  signupRequestPayload: SignupRequestPayload
+  signupRequestPayload: SignupRequestPayload;
   signupForm: FormGroup;
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService) { 
+    this.signupRequestPayload = {
+      username: '',
+      email: '',
+      password: ''
+    };
+  }
 
   // ngOnInit(): void {
   // }
@@ -28,8 +34,8 @@ export class SignUpComponent implements OnInit {
   }
 
   signup() {
-    this.signupRequestPayload.username = this.signupForm.get('username').value;
     this.signupRequestPayload.email = this.signupForm.get('email').value;
+    this.signupRequestPayload.username = this.signupForm.get('username').value; 
     this.signupRequestPayload.password = this.signupForm.get('password').value;
 
     this.authService.signup(this.signupRequestPayload).subscribe(
