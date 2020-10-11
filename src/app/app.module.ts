@@ -9,6 +9,8 @@ import { SignUpComponent } from './auth/sign-up/sign-up.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxWebstorageModule } from 'ngx-webstorage';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 //import { AuthModule } from './auth/auth.module';
 
 @NgModule({
@@ -23,7 +25,9 @@ import { NgxWebstorageModule } from 'ngx-webstorage';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    NgxWebstorageModule.forRoot()
+    NgxWebstorageModule.forRoot(),
+    ToastrModule.forRoot(),
+    BrowserAnimationsModule  
     // AuthModule
   ],
   providers: [],

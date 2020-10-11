@@ -29,5 +29,8 @@ export class AuthService {
       }));
     
   }
+  getJwtToken(){
+    return this.localStorage.retrieve('authenticationToken');
+  }
 
 }
