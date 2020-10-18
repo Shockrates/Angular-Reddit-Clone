@@ -13,6 +13,11 @@ import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TokenInterceptor } from './token-interceptor';
 import { HomeComponent } from './home/home.component';
+import { PostTitleComponent } from './shared/post-title/post-title.component';
+import { SideBarComponent } from './shared/side-bar/side-bar.component';
+import { SubredditSideBarComponent } from './shared/subreddit-side-bar/subreddit-side-bar.component';
+import { VoteButtonComponent } from './shared/vote-button/vote-button.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 //import { AuthModule } from './auth/auth.module';
 
 @NgModule({
@@ -21,7 +26,11 @@ import { HomeComponent } from './home/home.component';
     HeaderComponent,
     LoginComponent,
     SignUpComponent,
-    HomeComponent
+    HomeComponent,
+    PostTitleComponent,
+    SideBarComponent,
+    SubredditSideBarComponent,
+    VoteButtonComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +39,8 @@ import { HomeComponent } from './home/home.component';
     ReactiveFormsModule,
     NgxWebstorageModule.forRoot(),
     ToastrModule.forRoot(),
-    BrowserAnimationsModule  
+    BrowserAnimationsModule,
+    FontAwesomeModule  
     // AuthModule
   ],
   providers: [
