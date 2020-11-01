@@ -2,6 +2,7 @@ import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 import { faComments } from '@fortawesome/free-solid-svg-icons';
 import { PostModel } from '../post-model';
 import { PostService } from '../post.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-post-title',
@@ -14,7 +15,7 @@ export class PostTitleComponent implements OnInit {
   @Input() posts$: Array<PostModel>;
   faComments = faComments; 
 
-  constructor(private postService: PostService) { 
+  constructor(private postService: PostService, private router: Router) { 
     this.postService.getAllPosts().subscribe(post => {
     this.posts$  = post;
       })
@@ -24,6 +25,6 @@ export class PostTitleComponent implements OnInit {
   }
 
   goToPost(id: number): void{
-    
+    this.router.navigateByUrl('/view-post/' + id);
   }
 }
