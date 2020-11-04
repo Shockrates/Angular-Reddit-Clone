@@ -12,14 +12,11 @@ import { Router } from '@angular/router';
 })
 export class PostTitleComponent implements OnInit {
 
-  @Input() posts$: Array<PostModel>;
+  @Input() 
+  posts: PostModel[];
   faComments = faComments; 
 
-  constructor(private postService: PostService, private router: Router) { 
-    this.postService.getAllPosts().subscribe(post => {
-    this.posts$  = post;
-      })
-  }
+  constructor(private router: Router){}
 
   ngOnInit(): void {
   }

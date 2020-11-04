@@ -1,3 +1,9 @@
 {
-    "json.maxItemsComputed": 6000
+    "json.maxItemsComputed": 6000,
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    }
 }
