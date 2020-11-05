@@ -23,7 +23,7 @@ export class UserProfileComponent implements OnInit {
     this.name = this.activatedRoute.snapshot.params.name;
 
     this.postService.getAllPostsByUser(this.name).subscribe(data => {
-      this.posts = data;
+      this.posts = data.reverse();
       this.postLength = data.length;
     });
 
